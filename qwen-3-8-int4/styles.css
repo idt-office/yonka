@@ -72,6 +72,18 @@ input[type="range"] { width: 100%; accent-color: #ff7a1a; }
   cursor: pointer;
 }
 .btns button:hover { background: rgba(255, 255, 255, 0.18); }
+.btns a {
+  flex: 1 1 auto;
+  padding: 6px 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #9fd0ff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  text-decoration: none;
+}
+.btns a:hover { background: rgba(255, 255, 255, 0.18); }
 .btns button.on {
   background: rgba(255, 122, 26, 0.35);
   border-color: #ff9a3d;

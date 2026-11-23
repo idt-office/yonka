@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transkript - Yonkers Prime (QWEN 3-8 INT4)</title>
+  <script src="vendor/marked.min.js"></script>
+  <style>
+    html, body { margin: 0; background: #10151b; color: #dce6ef; font-family: "Segoe UI", system-ui, sans-serif; }
+    .bar {
+      position: sticky; top: 0; z-index: 2;
+      background: rgba(12, 17, 23, 0.92);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 20px;
+      display: flex; align-items: baseline; gap: 14px;
+      backdrop-filter: blur(6px);
+    }
+    .bar b { color: #ffb257; letter-spacing: 2px; font-size: 15px; }
+    .bar a { color: #9fd0ff; text-decoration: none; font-size: 13px; }
+    .bar a:hover { text-decoration: underline; }
+    .doc { max-width: 980px; margin: 0 auto; padding: 24px 20px 80px; line-height: 1.55; font-size: 14px; }
+    .doc h1 { font-size: 24px; color: #ffb257; letter-spacing: 1px; }
+    .doc h2 { font-size: 16px; color: #ffd9a8; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 4px; margin-top: 34px; }
+    .doc h3 { font-size: 14px; color: #cfe0ee; }
+    .doc pre {
+      background: #0b0f14; border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px; padding: 12px 14px; overflow-x: auto;
+      font-size: 12px; line-height: 1.45;
+    }
+    .doc code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+    .doc :not(pre) > code { background: rgba(255, 255, 255, 0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.92em; }
+    .doc blockquote { border-left: 3px solid #ff7a1a; margin: 0; padding: 2px 14px; color: #9fb0c0; }
+    .doc hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.14); margin: 28px 0; }
+    .doc a { color: #9fd0ff; }
+    .doc table { border-collapse: collapse; }
+    .doc td, .doc th { border: 1px solid rgba(255, 255, 255, 0.15); padding: 4px 10px; }
+    #load { text-align: center; padding: 80px 20px; color: #9fb0c0; }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <b>YONKERS PRIME</b>
+    <span>Session-Transkript (README.md)</span>
+    <a href="index.html">&larr; zur Animation</a>
+  </div>
+  <div class="doc" id="doc"><div id="load">lade Transkript&hellip;</div></div>
+  <script>
+    fetch('README.md')
+      .then((r) => {
+        if (!r.ok) throw new Error('README.md -> ' + r.status);
+        return r.text();
+      })
+      .then((md) => {
+        document.getElementById('doc').innerHTML = marked.parse(md);
+      })
+      .catch((e) => {
+        document.getElementById('doc').innerHTML =
+          '<p id="load">Fehler beim Laden des Transkripts: ' + e.message + '</p>';
+      });
+  </script>
+</body>
+</html>
