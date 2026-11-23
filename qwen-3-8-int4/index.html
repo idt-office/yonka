@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yonkers Prime - stomp tour über Manhattan, Queens &amp; Brooklyn</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="stage"></div>
+
+  <div id="panel">
+    <h1>YONKERS PRIME</h1>
+    <p class="sub">stomp tour &middot; Manhattan &rarr; Brooklyn &rarr; Queens</p>
+    <div id="status">Stadt wird gebaut&hellip;</div>
+    <div class="row">
+      <label>Tempo <span id="speedVal">3.0</span>&times;</label>
+      <input id="speed" type="range" min="0.5" max="8" step="0.5" value="3">
+    </div>
+    <div class="row progress">
+      <div id="prog"><i></i></div>
+    </div>
+    <div class="row btns">
+      <button id="replay">Neu starten</button>
+      <button id="camCine" class="on">Kino</button>
+      <button id="camOrbit">Orbit</button>
+      <button id="camTop">Karte</button>
+    </div>
+  </div>
+
+  <div id="credit">Kartendaten: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">&copy; OpenStreetMap-Mitwirkende</a></div>
+  <div id="loader"><div class="box"><span>YONKERS PRIME</span><p>lade Stadtdaten&hellip;</p></div></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,3 +1,3 @@
-# Build-Zwischenprodukte, neu mit scripts/build_map.py bzw. scripts/buildings.py
-data/tiles/
-data/overpass_raw.json
+# Build-Zwischenprodukte der einzelnen Ergebnis-Ordner (per scripts/... im Ordner neu aufbaubar)
+*/data/tiles/
+*/data/overpass_raw.json
