@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YONKERS // mech protocol</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0a0e14; }
+  canvas { display: block; }
+  .mono { font-family: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace; }
+  #hud { position: fixed; inset: 0; pointer-events: none; color: #cfd6de; }
+  #title { position: absolute; top: 18px; left: 22px; }
+  #title b { font-size: 26px; letter-spacing: 8px; color: #ff8a2a;
+             text-shadow: 0 0 18px rgba(255,110,30,.45); }
+  #title div { font-size: 11px; letter-spacing: 3px; color: #7d8894; margin-top: 4px; }
+  #stats { position: absolute; top: 20px; right: 22px; font-size: 10.5px;
+           letter-spacing: 1px; color: #66707c; text-align: right; line-height: 1.7; }
+  #cap { position: absolute; left: 50%; bottom: 64px; transform: translateX(-50%);
+         font-size: 15px; letter-spacing: 3px; color: #f4d9b8; opacity: 0;
+         transition: opacity .5s; text-shadow: 0 2px 10px #000; white-space: nowrap; }
+  #cap.show { opacity: 1; }
+  #ctl { position: absolute; right: 22px; bottom: 18px; font-size: 10.5px;
+         letter-spacing: 1px; color: #59636f; }
+  #ctl a { color: #8a95a1; pointer-events: auto; cursor: pointer; text-decoration: none; }
+  #credit { position: absolute; left: 22px; bottom: 18px; font-size: 10px;
+            letter-spacing: 1px; color: #4c5661; }
+  #flash { position: fixed; inset: 0; background: #fff; opacity: 0;
+           transition: opacity .28s ease-out; pointer-events: none; }
+  #loading { position: fixed; inset: 0; display: flex; flex-direction: column;
+             align-items: center; justify-content: center; gap: 14px;
+             background: #0a0e14; color: #cfd6de; z-index: 10; }
+  #loading .big { font-size: 30px; letter-spacing: 12px; color: #ff8a2a;
+                  text-shadow: 0 0 24px rgba(255,110,30,.5); }
+  #barwrap { width: 340px; height: 3px; background: #1d242e; }
+  #bar { width: 0%; height: 100%; background: #ff8a2a; transition: width .3s; }
+  #loadtext { font-size: 11px; letter-spacing: 2px; color: #66707c; }
+</style>
+</head>
+<body>
+<div id="hud" class="mono">
+  <div id="title"><b>YONKERS</b><div>MECH PROTOCOL 01 · STOMP SIM · OPENSTREETMAP</div></div>
+  <div id="stats"></div>
+  <div id="cap"></div>
+  <div id="ctl"><a id="mute">mute [M]</a> &nbsp;·&nbsp; 1/2/4 speed &nbsp;·&nbsp; space pause &nbsp;·&nbsp; R restart</div>
+  <div id="credit">map data © OpenStreetMap contributors (ODbL) · footprints extruded client-side</div>
+</div>
+<div id="flash"></div>
+<div id="loading" class="mono">
+  <div class="big">YONKERS</div>
+  <div id="barwrap"><div id="bar"></div></div>
+  <div id="loadtext">warming up ...</div>
+</div>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="app/main.js"></script>
+</body>
+</html>
